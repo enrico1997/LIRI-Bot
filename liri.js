@@ -27,13 +27,13 @@ var client = new Twitter({
 });
 
 function myTweets() {
-	var params = {count: 2};
+	var params = {count: 3};
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 		console.log(tweets);
 	  if (!error) {
 	       for (var i = 0; i < tweets.length; i++) {
-	            console.log(tweets[i].text + " Created on: " + tweets[i].created_at);
-	            fs.appendFile('log.txt', tweets[i].text + " Created on: " + tweets[i].created_at + "\n", function(err) {
+	            console.log(tweets[i].text + "\nTweeted on: " + tweets[i].created_at);
+	            fs.appendFile('log.txt', "\n" + tweets[i].text + "\n" + "Tweeted on: " + tweets[i].created_at + "\n", function(err) {
 					if (err) {
 						return console.log(err);
 					}
@@ -42,7 +42,7 @@ function myTweets() {
 	  } else {
 	       console.log(error);
 	  	}
-	console.log("log.txt was updated with Twitter info!");
+	console.log("\n===== log.txt was updated with Twitter info! =====");
 	});
 }
 
@@ -96,7 +96,7 @@ function movieThis() {
 					}
 				});
 			} 
-		console.log("log.txt was updated with Movie info!");
+		console.log("\n===== log.txt was updated with Movie info! =====");
 	  	} else {
 	       console.log(error);
 	  	  }
