@@ -17,6 +17,33 @@ var value = process.argv[3];
  * https://developer.spotify.com/web-api/authorization-guide/#client_credentials_flow
  */
 
+//Do What it Says Exercise
+function doWhatItSays() {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+    	if(error) {
+     		console.log(error);
+     	} else {
+			var randomDataArray = data.split(',');
+	    	// console.log("array:", randomDataArray);
+			var action = randomDataArray[0];
+			var value = randomDataArray[1];
+			switch (action) {
+				case "my-tweets":
+					myTweets();
+					break;
+
+				case "spotify-this-song":
+					spotifyThisSong();
+					break;
+
+				case "movie-this":
+					movieThis(value);
+					break;
+			}
+		  }
+	});
+}
+
 //Twitter Exercise
 // console.log("Twitter: ", keys.twitterKeys.consumer_key);
 var client = new Twitter({
@@ -29,7 +56,7 @@ var client = new Twitter({
 function myTweets() {
 	var params = {count: 3};
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
-		console.log(tweets);
+		// console.log(tweets);
 	  if (!error) {
 	       for (var i = 0; i < tweets.length; i++) {
 	            console.log(tweets[i].text + "\nTweeted on: " + tweets[i].created_at);
@@ -47,7 +74,7 @@ function myTweets() {
 }
 
 // OMDB Exercise
-function movieThis() {
+function movieThis(value) {
 	// Grab or assemble the movie name and store it in a variable called "movieName"
 	var movieName = 'Mr. Nobody';
 	if (value != undefined) {
@@ -113,7 +140,7 @@ switch (action) {
 		break;
 
 	case "movie-this":
-		movieThis();
+		movieThis(value);
 		break;
 
 	case "do-what-it-says":
