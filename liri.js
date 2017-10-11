@@ -11,17 +11,14 @@ var value = process.argv[3];
 function spotifyThisSong(value) {
 	// Grab or assemble the song name and store it in a variable called "trackName"
 	var trackName = 'The Sign Ace of Base';
-
 	if (value != undefined) {
 		trackName = value;
 	}
-
 	// Then run a request to the Spotify API with the track title specified
 	var spotify = new Spotify({
 	  id: keys.spotifyKeys.client_id,
 	  secret: keys.spotifyKeys.client_secret
 	});
-
 	spotify.search({ type: 'track', query: trackName, limit: 5 }, function(err, data) {
 		if (err) {
 		    return console.log('Error occurred: ' + err);
@@ -161,7 +158,7 @@ switch (action) {
 		break;
 
 	case "spotify-this-song":
-		spotifyThisSong();
+		spotifyThisSong(value);
 		break;
 
 	case "movie-this":
