@@ -1,15 +1,15 @@
 # LIRI-Bot
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
-### What Each Command Should Do
+### What Each Command Does
 
 1. `node liri.js my-tweets`
 
-   * This will show your last 20 tweets and when they were created at in your terminal/bash window.
+   * This shows my last 20 tweets and when they were created at on the terminal/bash window.
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
-   * This will show the following information about the song in your terminal/bash window
+   * This will show the following information about the song on the terminal/bash window
      
      * Artist(s)
      
@@ -19,11 +19,11 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
      
      * The album that the song is from
 
-   * If no song is provided then your program will default to "The Sign" by Ace of Base.
+   * If no song is provided then the program will default to "The Sign" by Ace of Base.
 
 3. `node liri.js movie-this '<movie name here>'`
 
-   * This will output the following information to your terminal/bash window:
+   * This will output the following information on the terminal/bash window:
 
      ```
        * Title of the movie.
@@ -46,32 +46,14 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
    
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
      
-     * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+     * It runs `spotify-this-song` for "I Want it That Way," since that's the value in `random.txt`.
      
-     * Feel free to change the text in that document to test out the feature for other commands.
-
 ### BONUS
 
-* In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
+* In addition to logging the data on the terminal/bash window, the date is also output to a .txt file called `log.txt`.
 
-* Make sure you append each command you run to the `log.txt` file. 
-
-* Do not overwrite your file each time you run a command.
-
-- - -
-
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed.
-
-- - -
-
-### One More Thing
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-**Good Luck!**
+* Each command run is appended to the `log.txt` file. 
 
 ## Copyright
 
-Coding Boot Camp (C) 2016. All Rights Reserved.
+Enrico Bernardo, UCSD Coding Boot Camp (C) 2017. All Rights Reserved.
